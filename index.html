@@ -4,41 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENZE | Everything You Need, All in One Place</title>
-    <script src="https://jsdelivr.net"></script>
+    <!-- Stable production engine layout core script -->
+    <script src="https://tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         @import url('https://googleapis.com');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfbfe; }
-        .smooth-transition { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="text-neutral-800">
+<body class="text-neutral-800 antialiased">
 
     <!-- Top Announcement Bar -->
-    <div class="bg-purple-900 text-yellow-300 text-xs py-2 px-4 text-center font-medium tracking-wide">
+    <div class="bg-purple-900 text-yellow-300 text-xs py-2.5 px-4 text-center font-semibold tracking-wide">
         ✨ Secure UPI Payments & Cash on Delivery Available Across India!
     </div>
 
     <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-purple-100 shadow-xs">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-purple-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-            <a href="#" class="text-2xl font-extrabold tracking-tight text-purple-900 flex items-center gap-1">
+            <a href="#" class="text-2xl font-extrabold tracking-tight text-purple-900 flex items-center gap-0.5">
                 ENZE<span class="text-yellow-500 text-3xl leading-none">.</span>
             </a>
             
             <!-- Search Bar Component -->
             <div class="hidden md:flex flex-1 max-w-md relative">
-                <input type="text" id="desktopSearch" oninput="handleSearch(this.value)" placeholder="Search fashion, beauty, home décor, kitchen items..." class="w-full pl-10 pr-4 py-2 bg-purple-50/50 border border-purple-100 rounded-full text-sm focus:outline-none focus:border-purple-500 focus:bg-white smooth-transition">
+                <input type="text" id="desktopSearch" oninput="handleSearch(this.value)" placeholder="Search fashion, beauty, home décor, kitchen items..." class="w-full pl-10 pr-4 py-2 bg-purple-50/50 border border-purple-100 rounded-full text-sm focus:outline-none focus:border-purple-500 focus:bg-white transition-all duration-300">
                 <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-purple-400 text-sm"></i>
             </div>
 
             <!-- Action Controls -->
             <div class="flex items-center gap-4">
-                <button onclick="toggleWishlistModal()" class="relative p-2 text-neutral-600 hover:text-purple-700 smooth-transition cursor-pointer">
+                <button onclick="toggleWishlistModal()" class="relative p-2 text-neutral-600 hover:text-purple-700 transition-all duration-300 cursor-pointer">
                     <i class="fa-regular fa-heart text-xl"></i>
                     <span id="wishlistCount" class="absolute top-0 right-0 bg-yellow-400 text-purple-950 font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
                 </button>
-                <button onclick="toggleCart()" class="relative p-2 text-neutral-600 hover:text-purple-700 smooth-transition cursor-pointer">
+                <button onclick="toggleCart()" class="relative p-2 text-neutral-600 hover:text-purple-700 transition-all duration-300 cursor-pointer">
                     <i class="fa-solid fa-bag-shopping text-xl"></i>
                     <span id="cartCount" class="absolute top-0 right-0 bg-purple-600 text-white font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
                 </button>
@@ -48,7 +50,7 @@
         <!-- Mobile Search Dropbar -->
         <div class="p-3 bg-white border-b border-purple-50 md:hidden">
             <div class="relative">
-                <input type="text" id="mobileSearch" oninput="handleSearch(this.value)" placeholder="Search products..." class="w-full pl-10 pr-4 py-2 bg-purple-50/50 border border-purple-100 rounded-xl text-sm focus:outline-none focus:border-purple-500">
+                <input type="text" id="mobileSearch" oninput="handleSearch(this.value)" placeholder="Search fashion, beauty, decor..." class="w-full pl-10 pr-4 py-2 bg-purple-50/50 border border-purple-100 rounded-xl text-sm focus:outline-none focus:border-purple-500">
                 <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-purple-400 text-sm"></i>
             </div>
         </div>
@@ -57,21 +59,21 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         
         <!-- Hero Dynamic Interactive Banner Section -->
-        <section class="relative rounded-3xl overflow-hidden mb-12 bg-gradient-to-tr from-purple-950 via-purple-900 to-indigo-950 text-white shadow-xl min-h-[460px] flex items-center">
+        <section class="relative rounded-3xl overflow-hidden mb-12 bg-gradient-to-tr from-purple-950 via-purple-900 to-indigo-950 text-white shadow-xl min-h-[380px] flex items-center">
             <div class="absolute inset-0 opacity-15 mix-blend-overlay bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
             <div class="relative z-10 max-w-2xl px-6 py-12 md:px-12 flex flex-col items-start">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-400/20 border border-yellow-400/30 text-yellow-300 text-xs font-semibold uppercase tracking-wider mb-4">
                     🚀 Premium Marketplace
                 </span>
-                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
+                <h1 class="text-3xl md:text-5xl font-black tracking-tight mb-4 leading-tight">
                     Everything You Need, <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400">All in One Place</span>
                 </h1>
-                <p class="text-purple-100/90 text-sm md:text-base mb-8 max-w-xl leading-relaxed">
+                <p class="text-purple-100/90 text-xs md:text-sm mb-8 max-w-xl leading-relaxed">
                     Discover quality fashion, beauty, home décor, kitchen essentials, accessories, and more at affordable prices. Secure UPI payments and Cash on Delivery available.
                 </p>
-                <div class="flex flex-wrap gap-4 w-full sm:w-auto">
-                    <a href="#products-display" class="w-full sm:w-auto text-center px-8 py-3.5 bg-yellow-400 hover:bg-yellow-300 text-purple-950 font-bold rounded-xl shadow-lg shadow-yellow-500/10 smooth-transition transform hover:-translate-y-0.5">Shop Now</a>
-                    <button onclick="filterCategory('deals')" class="w-full sm:w-auto text-center px-8 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium rounded-xl smooth-transition backdrop-blur-xs cursor-pointer">Today's Deals</button>
+                <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                    <a href="#products-display" class="w-full sm:w-auto text-center px-8 py-3.5 bg-yellow-400 hover:bg-yellow-300 text-purple-950 font-bold rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">Shop Now</a>
+                    <button onclick="filterCategory('deals')" class="w-full sm:w-auto text-center px-8 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium rounded-xl transition-all duration-300 backdrop-blur-sm cursor-pointer">Today's Deals</button>
                 </div>
             </div>
             
@@ -101,11 +103,11 @@
                 <button onclick="filterCategory('all')" id="clearFilterBtn" class="text-xs text-purple-600 font-medium hover:underline hidden cursor-pointer">View All Items</button>
             </div>
             <div class="flex gap-3 overflow-x-auto pb-4 scrollbar-none snap-x -mx-4 px-4 sm:mx-0 sm:px-0">
-                <button onclick="filterCategory('all')" class="category-btn active snap-start shrink-0 px-5 py-2.5 rounded-xl bg-purple-900 text-white font-medium text-xs smooth-transition cursor-pointer shadow-sm">All Marketplace</button>
-                <button onclick="filterCategory('women')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 smooth-transition cursor-pointer">Women's Fashion</button>
-                <button onclick="filterCategory('men')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 smooth-transition cursor-pointer">Men's Fashion</button>
-                <button onclick="filterCategory('footwear')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 smooth-transition cursor-pointer">Footwear</button>
-                <button onclick="filterCategory('jewellery')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 smooth-transition cursor-pointer">Jewellery</button>
-                <button onclick="filterCategory('beauty')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 smooth-transition cursor-pointer">Beauty</button>
-                <button onclick="filterCategory('decor')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 smooth-transition cursor-pointer">Home Decor</button>
-                <button onclick="filterCategory('kitchen')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 smooth-transition cursor-pointer">Kitchen Essentials</button>
+                <button onclick="filterCategory('all')" class="category-btn active snap-start shrink-0 px-5 py-2.5 rounded-xl bg-purple-900 text-white font-medium text-xs transition-all duration-300 cursor-pointer shadow-sm">All Marketplace</button>
+                <button onclick="filterCategory('women')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 transition-all duration-300 cursor-pointer">Women's Fashion</button>
+                <button onclick="filterCategory('men')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 transition-all duration-300 cursor-pointer">Men's Fashion</button>
+                <button onclick="filterCategory('footwear')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 transition-all duration-300 cursor-pointer">Footwear</button>
+                <button onclick="filterCategory('jewellery')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 transition-all duration-300 cursor-pointer">Jewellery</button>
+                <button onclick="filterCategory('beauty')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 transition-all duration-300 cursor-pointer">Beauty</button>
+                <button onclick="filterCategory('decor')" class="category-btn snap-start shrink-0 px-5 py-2.5 rounded-xl bg-white border border-purple-100 text-neutral-600 font-medium text-xs hover:border-purple-300 hover:text-purple-900 transition-all duration-300 cursor-pointer">Home Decor</button>
+                
